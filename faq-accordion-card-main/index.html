@@ -51,17 +51,16 @@
     .card {
       width: 1000px;
       height: 500px;
-      border: 2px solid;
       display: flex;
       flex-direction: row;
       border-radius: 20px;
       position: relative;
       background-color: white;
+      margin: 0 20px;
     }
 
     .image {
       position: relative;
-      border: 2px solid blue;
       flex-basis: 50%;
       display: flex;
       justify-content: center;
@@ -79,6 +78,7 @@
       height: 75%;
       position: relative;
       left: -85px;
+      z-index: 2;
     }
 
     .box {
@@ -91,7 +91,6 @@
     .content {
       position: relative;
       flex-basis: 50%;
-      border: 2px solid red;
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -100,12 +99,9 @@
     }
 
     .tl {
-      /* padding: 15px 5px; */
-      /* border: 2px solid; */
       border-bottom: 1px solid var(--Lightgrayishblue);
       display: flex;
       flex-direction: column;
-
     }
 
     .tl h4 {
@@ -115,6 +111,7 @@
       margin: 15px 0;
       font-weight: 400;
       transition: all 300ms;
+
     }
 
     .tl h4:hover {
@@ -125,6 +122,9 @@
       width: 85%;
       margin-top: 30px;
       font-size: 15px;
+      padding: 10px;
+      transition: all 300ms;
+
     }
 
     .drop {
@@ -140,7 +140,100 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      /* display: block; */
+      transition: all 300ms;
+    }
+
+    @media screen and (max-width: 800px) {
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(var(--Softviolet), var(--Softblue));
+      }
+
+      .card {
+        max-width: 400px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        border-radius: 20px;
+        position: relative;
+        background-color: white;
+        margin: 5px 50px;
+      }
+
+      .image {
+        flex-basis: 20%;
+        overflow: visible;
+        max-height: 100px;
+        position: relative;
+      }
+
+      .bg {
+        position: relative;
+        left: -100px;
+        bottom: 50px;
+        height: 200px;
+      }
+
+      .top {
+        height: 150px;
+        position: relative;
+        left: 100px;
+        top: -50px;
+        z-index: 2;
+      }
+
+      .box {
+        left: 85px;
+        top: 0px;
+        z-index: 5;
+        height: 80px;
+      }
+
+      .content {
+        position: relative;
+        flex-basis: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px;
+      }
+
+      .tl {
+        border-bottom: 1px solid var(--Lightgrayishblue);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .tl h4 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 400;
+        transition: all 300ms;
+      }
+
+      .tl h4:hover {
+        color: var(--Softred);
+      }
+
+      .title-box {
+        width: 85%;
+        margin-top: 10px;
+        font-size: 12px;
+        padding: 10px;
+        transition: all 300ms;
+      }
+
+      .drop {
+        height: 5px;
+        width: 10px;
+      }
     }
   </style>
 
@@ -223,19 +316,16 @@
     const questions = document.querySelectorAll(".tl")
 
     questions.forEach(que => {
-
       const btns = que.querySelector(".drop")
       const head = que.querySelector("h4")
       const text = que.querySelector(".text")
-
-
       btns.addEventListener("click", function (e) {
         console.log("change");
-
-
+        head.classList.toggle("active")
         questions.forEach(function (q) {
-          if (que !== q) {
-            q.classList.remove("show-text");
+          if (q !== que) {
+            let c = q.querySelector(".text")
+            c.classList.remove("show-text");
           }
         })
         text.classList.toggle("show-text");
