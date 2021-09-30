@@ -1,40 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | FAQ Accordion Card</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: var(--font);
+    }
+
+    :root {
+      /* ### Primary */
+      /* #### Text */
+      --Verydarkdesaturatedblue: hsl(238, 29%, 16%);
+      --Softred: hsl(14, 88%, 65%);
+
+      /* ####Gradient */
+      /*Backgroundgradient:*/
+      --Softviolet: hsl(273, 75%, 66%);
+      --Softblue: hsl(240, 73%, 65%);
+
+      /* ###Neutral ####Text */
+      --Verydarkgrayishblue: hsl(237, 12%, 33%);
+      --Darkgrayishblue: hsl(240, 6%, 50%);
+
+      /* ####Dividers */
+      --Lightgrayishblue: hsl(240, 5%, 91%);
+
+      --font: 'Kumbh Sans', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: linear-gradient(var(--Softviolet), var(--Softblue))
+    }
+
+    .card {
+      width: 1000px;
+      height: 500px;
+      border: 2px solid;
+      display: flex;
+      flex-direction: row;
+      border-radius: 20px;
+      position: relative;
+      background-color: white;
+    }
+
+    .image {
+      position: relative;
+      border: 2px solid blue;
+      flex-basis: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .bg {
+      position: absolute;
+      left: -115%;
+      bottom: -150px;
+    }
+
+    .top {
+      height: 75%;
+      position: relative;
+      left: -85px;
+    }
+
+    .box {
+      position: absolute;
+      left: -100px;
+      bottom: 100px;
+      z-index: 5;
+    }
+
+    .content {
+      position: relative;
+      flex-basis: 50%;
+      border: 2px solid red;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 10px;
+    }
+
+    .tl {
+      /* padding: 15px 5px; */
+      /* border: 2px solid; */
+      border-bottom: 1px solid var(--Lightgrayishblue);
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    .tl h4 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 15px 0;
+      font-weight: 400;
+      transition: all 300ms;
+    }
+
+    .tl h4:hover {
+      color: var(--Softred);
+    }
+
+    .title-box {
+      width: 85%;
+      margin-top: 30px;
+      font-size: 15px;
+    }
+
+    .drop {
+      height: 10px;
+      width: 15px;
+    }
+
+    .text {
+      display: none;
+    }
+
+    .show-text {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /* display: block; */
+    }
   </style>
+
 </head>
+
 <body>
-  How many team members can I invite?
-  You can invite up to 2 additional users on the Free plan. There is no limit on 
-  team members for the Premium plan.
+  <div class="card">
+    <img src="images/illustration-box-desktop.svg" class="box">
 
-  What is the maximum file upload size?
-  No more than 2GB. All files in your account must fit your allotted storage space.
+    <div class="image">
+      <img src="images/illustration-woman-online-desktop.svg" class="top">
 
-  How do I reset my password?
-  Click “Forgot password” from the login page or “Change password” from your profile page.
-  A reset link will be emailed to you.
+      <img src="images/bg-pattern-desktop.svg" class="bg">
 
-  Can I cancel my subscription?
-  Yes! Send us a message and we’ll process your request no questions asked.
+    </div>
 
-  Do you provide additional support?
-  Chat and email support is available 24/7. Phone lines are open during normal business hours.
+    <div class="content">
+      <div class="faq">
+        <h1>FAQ</h1>
+      </div>
+      <div class="title-box">
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+        <div class="tl">
+          <h4>How many team members can I invite?
+            <img src="images/icon-arrow-down.svg" class="drop">
+          </h4>
+
+          <div class="text">
+            You can invite up to 2 additional users on the Free plan. There is no limit on
+            team members for the Premium plan.
+          </div>
+        </div>
+
+        <div class="tl">
+          <h4> What is the maximum file upload size?
+            <img src="images/icon-arrow-down.svg" class="drop">
+          </h4>
+
+          <div class="text">
+            No more than 2GB. All files in your account must fit your allotted storage space.
+
+          </div>
+        </div>
+
+        <div class="tl">
+          <h4> How do I reset my password?
+            <img src="images/icon-arrow-down.svg" class="drop">
+          </h4>
+
+          <div class="text">
+            Click “Forgot password” from the login page or “Change password” from your profile page.
+            A reset link will be emailed to you.
+          </div>
+        </div>
+
+        <div class="tl">
+          <h4> Can I cancel my subscription?
+            <img src="images/icon-arrow-down.svg" class="drop">
+          </h4>
+
+          <div class="text">
+            Yes! Send us a message and we’ll process your request no questions asked.
+          </div>
+        </div>
+
+
+        <div class="tl">
+          <h4> Do you provide additional support?
+            <img src="images/icon-arrow-down.svg" class="drop">
+          </h4>
+
+          <div class="text"> Chat and email support is available 24/7. Phone lines are open during normal business
+            hours.</div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <script>
+    const questions = document.querySelectorAll(".tl")
+
+    questions.forEach(que => {
+
+      const btns = que.querySelector(".drop")
+      const head = que.querySelector("h4")
+      const text = que.querySelector(".text")
+
+
+      btns.addEventListener("click", function (e) {
+        console.log("change");
+
+
+        questions.forEach(function (q) {
+          if (que !== q) {
+            q.classList.remove("show-text");
+          }
+        })
+        text.classList.toggle("show-text");
+      })
+
+    })
+  </script>
 </body>
+
 </html>
