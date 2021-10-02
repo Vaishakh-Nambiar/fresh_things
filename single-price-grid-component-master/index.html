@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Single Price Grid Component</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+    :root {
+      /* ## Colors */
+      /* ### Primary */
+      --Cyan: hsl(179, 62%, 43%);
+      --LightCyan: hsl(179, 58%, 50%);
+      --BrightYellow: hsl(71, 73%, 54%);
+
+      /* ###Neutral */
+      --LightGray: hsl(204, 43%, 93%);
+      --GrayishBlue: hsl(218, 22%, 67%);
+
+      --font: 'Karla', sans-serif;
+    }
+
+    * {
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background-color: var(--LightGray);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: var(--font);
+      font-size: 16px;
+    }
+
+    .card {
+      height: 500px;
+      width: 650px;
+      background-color: white;
+      border-radius: 10px;
+      display: grid;
+      overflow: hidden;
+    }
+
+    .top,
+    .btm-left,
+    .btm-right {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .top {
+      padding: 0px 20px;
+      grid-column: 1 / span 4;
+      grid-row: 1;
+    }
+
+    .btm-right {
+      grid-column: 3 / span 2;
+      grid-row: 2;
+      background-color: var(--LightCyan);
+      padding: 0 30px 40px 20px;
+    }
+
+    .btm-left {
+      background-color: var(--Cyan);
+      padding: 5px 10px 5px 20px;
+      grid-column: 1 / span 2;
+      grid-row: 2;
+    }
+
+
+    #money {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      height: 50px;
+      width: 180px;
+      color: white;
+    }
+
+    #time {
+      color: var(--LightCyan);
+    }
+
+    .but {
+      padding: 20px 0px;
+      width: 75%;
+      background-color: var(--BrightYellow);
+      text-align: center;
+      margin: 5px;
+      border-radius: 15px;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 200ms;
+      box-shadow: -2px 11px 23px -6px rgba(0, 0, 0, 0.59);
+
+    }
+
+    .but:hover {
+      transform: translateY(-5px);
+    }
+
+    span {
+      display: block;
+    }
+
+    p {
+      color: white;
+    }
+
+    h3 {
+      color: white;
+    }
+
+    #top-head2 {
+      color: var(--BrightYellow);
+    }
+
+    #t1 {
+      color: var(--GrayishBlue);
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <div class="top">
+      <h2 id="top-head1">
+        Join our community
+      </h2>
+      <h3 id="top-head2">
+        30-day, hassle-free money back guarantee
+      </h3>
+      <p id="t1">
+        Gain access to our full library of tutorials along with expert code reviews.
+        Perfect for any developers who are serious about honing their skills.
+      </p>
+    </div>
+
+    <div class="btm-left">
+
+
+      <h3 id="left-head">Monthly Subscription
+      </h3>
+      <div id="money">
+        <h1>
+          &dollar;29
+        </h1>
+        <div id="time">
+          per month
+        </div>
+      </div>
+
+      <p> Full access for less than &dollar;1 a day
+      </p>
+
+      <div class="but">
+        <a href="https://www.geeksforgeeks.org/" target="_blank">
+          Sign Up
+        </a>
+      </div>
+    </div>
+
+
+    <div class="btm-right">
+      <h3> Why Us
+      </h3>
+      <p>
+        <span> Tutorials by industry experts</span>
+        <span> Peer &amp; expert code review</span>
+        <span> Coding exercises</span>
+        <span> Access to our GitHub repos</span>
+        <span> Community forum</span>
+        <span> Flashcard decks</span>
+        <span> New videos every week</span>
+      </p>
+    </div>
+  </div>
+  
+</body>
+
+</html>
